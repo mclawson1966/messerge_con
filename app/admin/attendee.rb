@@ -1,4 +1,5 @@
 ActiveAdmin.register Attendee do
+  permit_params :paid, :name, :email
 
 
   # See permitted parameters documentation:
