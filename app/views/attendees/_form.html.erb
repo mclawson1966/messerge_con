@@ -1,0 +1,14 @@
+<%= simple_form_for(@attendee) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :user %>
+    <%= f.input :paid %>
+    <%= f.input :name %>
+    <%= f.input :email %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

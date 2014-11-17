@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @attendee.user %>
+</p>
+
+<p>
+  <strong>Paid:</strong>
+  <%= @attendee.paid %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @attendee.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @attendee.email %>
+</p>
+
+<%= link_to 'Edit', edit_attendee_path(@attendee) %> |
+<%= link_to 'Back', attendees_path %>
