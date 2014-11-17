@@ -1,4 +1,5 @@
 ActiveAdmin.register GameEvent do
+  permit_params :title, :description, :game_system, :start_date_time, :hours_duration, :number_of_players, :approved, :scheduled, :accepting_players
 
 
   # See permitted parameters documentation:
