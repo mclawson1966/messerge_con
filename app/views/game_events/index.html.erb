@@ -1,0 +1,43 @@
+<h1>Listing game_events</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Game system</th>
+      <th>Start date time</th>
+      <th>Hours duration</th>
+      <th>Number of players</th>
+      <th>Approved</th>
+      <th>Scheduled</th>
+      <th>Accepting players</th>
+      <th>Gm</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @game_events.each do |game_event| %>
+      <tr>
+        <td><%= game_event.title %></td>
+        <td><%= game_event.description %></td>
+        <td><%= game_event.game_system %></td>
+        <td><%= game_event.start_date_time %></td>
+        <td><%= game_event.hours_duration %></td>
+        <td><%= game_event.number_of_players %></td>
+        <td><%= game_event.approved %></td>
+        <td><%= game_event.scheduled %></td>
+        <td><%= game_event.accepting_players %></td>
+        <td><%= game_event.gm %></td>
+        <td><%= link_to 'Show', game_event %></td>
+        <td><%= link_to 'Edit', edit_game_event_path(game_event) %></td>
+        <td><%= link_to 'Destroy', game_event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Game event', new_game_event_path %>

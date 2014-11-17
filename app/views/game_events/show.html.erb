@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @game_event.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @game_event.description %>
+</p>
+
+<p>
+  <strong>Game system:</strong>
+  <%= @game_event.game_system %>
+</p>
+
+<p>
+  <strong>Start date time:</strong>
+  <%= @game_event.start_date_time %>
+</p>
+
+<p>
+  <strong>Hours duration:</strong>
+  <%= @game_event.hours_duration %>
+</p>
+
+<p>
+  <strong>Number of players:</strong>
+  <%= @game_event.number_of_players %>
+</p>
+
+<p>
+  <strong>Approved:</strong>
+  <%= @game_event.approved %>
+</p>
+
+<p>
+  <strong>Scheduled:</strong>
+  <%= @game_event.scheduled %>
+</p>
+
+<p>
+  <strong>Accepting players:</strong>
+  <%= @game_event.accepting_players %>
+</p>
+
+<p>
+  <strong>Gm:</strong>
+  <%= @game_event.gm %>
+</p>
+
+<%= link_to 'Edit', edit_game_event_path(@game_event) %> |
+<%= link_to 'Back', game_events_path %>

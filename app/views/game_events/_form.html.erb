@@ -1,0 +1,20 @@
+<%= simple_form_for(@game_event) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :game_system %>
+    <%= f.input :start_date_time %>
+    <%= f.input :hours_duration %>
+    <%= f.input :number_of_players %>
+    <%= f.input :approved %>
+    <%= f.input :scheduled %>
+    <%= f.input :accepting_players %>
+    <%= f.association :gm %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
