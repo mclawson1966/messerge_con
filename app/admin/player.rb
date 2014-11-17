@@ -1,4 +1,5 @@
 ActiveAdmin.register Player do
+  permit_params :name, :email
 
 
   # See permitted parameters documentation:
