@@ -1,20 +1,64 @@
-<%= simple_form_for(@game_event) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :description %>
-    <%= f.input :game_system %>
-    <%= f.input :start_date_time %>
-    <%= f.input :hours_duration %>
-    <%= f.input :number_of_players %>
-    <%= f.input :approved %>
-    <%= f.input :scheduled %>
-    <%= f.input :accepting_players %>
-    <%= f.association :gm %>
+<%= form_for @game_event, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :title, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :title, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :description, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :description, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :game_system, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :game_system, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :start_date_time, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.datetime_select :start_date_time, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :hours_duration, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :hours_duration, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :number_of_players, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :number_of_players, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :approved, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :approved, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :scheduled, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :scheduled, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :accepting_players, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :accepting_players, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  game_events_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>

@@ -1,54 +1,40 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = GameEvent -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => GameEvent %></h1>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @game_event.title %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:title) %></dt>
+      <dd><pre class="prettyprint"><%= @game_event.title %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:description) %></dt>
+      <dd><pre class="prettyprint"><%= @game_event.description %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:game_system) %></dt>
+      <dd><pre class="prettyprint"><%= @game_event.game_system %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:start_date_time) %></dt>
+      <dd><pre class="prettyprint"><%= @game_event.start_date_time %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:hours_duration) %></dt>
+      <dd><pre class="prettyprint"><%= @game_event.hours_duration %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:number_of_players) %></dt>
+      <dd><pre class="prettyprint"><%= @game_event.number_of_players %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:approved) %></dt>
+      <dd><pre class="prettyprint"><%= @game_event.approved %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:scheduled) %></dt>
+      <dd><pre class="prettyprint"><%= @game_event.scheduled %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:accepting_players) %></dt>
+      <dd><pre class="prettyprint"><%= @game_event.accepting_players %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @game_event.description %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              game_events_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_game_event_path(@game_event), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              game_event_path(@game_event),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Game system:</strong>
-  <%= @game_event.game_system %>
-</p>
-
-<p>
-  <strong>Start date time:</strong>
-  <%= @game_event.start_date_time %>
-</p>
-
-<p>
-  <strong>Hours duration:</strong>
-  <%= @game_event.hours_duration %>
-</p>
-
-<p>
-  <strong>Number of players:</strong>
-  <%= @game_event.number_of_players %>
-</p>
-
-<p>
-  <strong>Approved:</strong>
-  <%= @game_event.approved %>
-</p>
-
-<p>
-  <strong>Scheduled:</strong>
-  <%= @game_event.scheduled %>
-</p>
-
-<p>
-  <strong>Accepting players:</strong>
-  <%= @game_event.accepting_players %>
-</p>
-
-<p>
-  <strong>Gm:</strong>
-  <%= @game_event.gm %>
-</p>
-
-<%= link_to 'Edit', edit_game_event_path(@game_event) %> |
-<%= link_to 'Back', game_events_path %>
