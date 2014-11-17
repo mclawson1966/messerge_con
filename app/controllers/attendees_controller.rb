@@ -29,6 +29,7 @@ class AttendeesController < ApplicationController
   # POST /attendees.json
   def create
     @attendee = Attendee.new(attendee_params)
+    @attendee.user = current_user
 
     respond_to do |format|
       if @attendee.save
