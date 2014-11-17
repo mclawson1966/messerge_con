@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  attendee_id: 
+  name: MyString
+  email: MyString
+  game_event_id: 
+
+two:
+  attendee_id: 
+  name: MyString
+  email: MyString
+  game_event_id: 
